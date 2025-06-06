@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 st.set_page_config(layout="wide")
-st.title("🚕 서울시 장애인 택시 수요 분석 대시보드")
+st.title("🚕 서울시 장애인 택시 운행량 수요 예측 및 분석 대시보드")
 
 # 1. 파일 업로드
 uploaded_file = st.file_uploader("📂 CSV 파일 업로드 (예: Seoul_2024_real.csv)", type="csv")
