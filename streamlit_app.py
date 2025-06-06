@@ -62,3 +62,4 @@ if uploaded_file:
             fig4, ax4 = plt.subplots()
             sns.histplot(df['precipitation_minmax'], kde=True, color='green', ax=ax4)
             ax4.set_title("강수량 정규화")
+            st.pyplot(fig4)
