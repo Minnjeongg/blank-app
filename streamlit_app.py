@@ -46,7 +46,7 @@ if uploaded_file:
     with tab1:
         st.subheader("📊 요일별 평균 탑승량")
         order = ['월', '화', '수', '목', '금', '토', '일']
-        fig, ax = plt.subplots()(figsize=(6, 4))
+        fig, ax = plt.subplots(figsize=(6, 4))
         sns.barplot(data=df, x='day_of_week', y='num_boardings', order=order, ax=ax)
         ax.set_title("요일별 수요량", fontsize=11)  # 💡 제목 글씨 크기
         ax.tick_params(labelsize=9)  # 💡 축 글씨 크기
