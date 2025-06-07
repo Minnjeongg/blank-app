@@ -5,6 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 import matplotlib.font_manager as fm
+import os
 
 # 업로드한 한글 폰트 경로 (루트 경로에 업로드됨)
 font_path = "NotoSansKR-Regular.ttf"  # 또는 NotoSansKR-Regular.ttf
