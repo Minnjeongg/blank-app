@@ -4,6 +4,15 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
+import matplotlib.font_manager as fm
+
+# 업로드한 한글 폰트 경로 (루트 경로에 업로드됨)
+font_path = "NanumGothic.ttf"  # 또는 NotoSansKR-Regular.ttf
+
+# 폰트 적용
+font_prop = fm.FontProperties(fname=font_path)
+plt.rc('font', family=font_prop.get_name())
+plt.rcParams['axes.unicode_minus'] = False
 
 st.set_page_config(layout="wide")
 st.title("🚕 서울시 장애인 택시 운행량 수요 예측 및 분석 대시보드")
