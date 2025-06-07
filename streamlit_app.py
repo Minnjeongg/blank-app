@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler, StandardScaler
 import matplotlib.font_manager as fm
 
 # 업로드한 한글 폰트 경로 (루트 경로에 업로드됨)
-font_path = "NanumGothic.ttf"  # 또는 NotoSansKR-Regular.ttf
+font_path = "NotoSansKR-Regular.ttf"  # 또는 NotoSansKR-Regular.ttf
 
 # 폰트 적용
 font_prop = fm.FontProperties(fname=font_path)
