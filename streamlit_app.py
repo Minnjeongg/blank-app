@@ -14,6 +14,7 @@ font_prop = fm.FontProperties(fname=font_path)
 plt.rc('font', family=font_prop.get_name())
 plt.rcParams['axes.unicode_minus'] = False
 
+
 st.set_page_config(layout="wide")
 st.title("🚕 서울시 장애인 택시 운행량 수요 예측 및 분석 대시보드")
 
@@ -44,13 +45,15 @@ if uploaded_file:
     with tab1:
         st.subheader("📊 요일별 평균 탑승량")
         order = ['월', '화', '수', '목', '금', '토', '일']
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots()(figsize=(6, 4))
         sns.barplot(data=df, x='day_of_week', y='num_boardings', order=order, ax=ax)
+        ax.set_title("요일별 수요량", fontsize=11)  # 💡 제목 글씨 크기
+        ax.tick_params(labelsize=9)  # 💡 축 글씨 크기
         st.pyplot(fig)
 
     with tab2:
         st.subheader("📊 자치구별 평균 탑승량")
-        fig2, ax2 = plt.subplots(figsize=(10, 6))
+        fig2, ax2 = plt.subplots(figsize=(6, 4))
         district_avg = df.groupby("district")["num_boardings"].mean().sort_values()
         sns.barplot(x=district_avg.values, y=district_avg.index, ax=ax2)
         st.pyplot(fig2)
@@ -61,14 +64,14 @@ if uploaded_file:
 
         with col1:
             st.write("정규화 전")
-            fig3, ax3 = plt.subplots()
+            fig3, ax3 = plt.subplots(figsize=(6, 4))
             sns.histplot(df['precipitation'], kde=True, ax=ax3)
-            ax3.set_title("강수량 원본")
+            ax3.set_title("강수량 원본", fontsize=11)
             st.pyplot(fig3)
 
         with col2:
             st.write("Min-Max 정규화")
-            fig4, ax4 = plt.subplots()
+            fig4, ax4 = plt.subplots(figsize=(6, 4))
             sns.histplot(df['precipitation_minmax'], kde=True, color='green', ax=ax4)
-            ax4.set_title("강수량 정규화")
+            ax4.set_title("강수량 정규화", fontsize=11)
             st.pyplot(fig4)
